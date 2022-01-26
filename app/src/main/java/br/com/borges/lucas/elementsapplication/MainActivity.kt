@@ -1,8 +1,10 @@
 package br.com.borges.lucas.elementsapplication
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.borges.lucas.elementsapplication.databinding.ActivityMainBinding
@@ -36,6 +38,12 @@ class MainActivity : AppCompatActivity() {
 
     binding.buttonSnack.setOnClickListener{
       val snack = Snackbar.make(binding.linearRoot, "Snack", Snackbar.LENGTH_SHORT )
+
+      snack.setAction( "desfazer" , View.OnClickListener {
+        toast( "desfeito" )
+      })
+      snack.setActionTextColor( Color.BLUE )
+      snack.setBackgroundTint( Color.GRAY )
       snack.show()
     }
   }
