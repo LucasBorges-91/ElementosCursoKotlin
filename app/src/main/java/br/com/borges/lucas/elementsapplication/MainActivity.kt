@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.borges.lucas.elementsapplication.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMainBinding
@@ -30,6 +31,12 @@ class MainActivity : AppCompatActivity() {
       //setando o gravity do toast
       toast.setGravity( Gravity.TOP, 0, 0 )
       toast.show()
+    }
+
+
+    binding.buttonSnack.setOnClickListener{
+      val snack = Snackbar.make(binding.linearRoot, "Snack", Snackbar.LENGTH_SHORT )
+      snack.show()
     }
   }
 
