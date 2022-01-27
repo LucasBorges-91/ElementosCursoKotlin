@@ -76,6 +76,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener,
     }
 
     binding.switchButton.setOnCheckedChangeListener( this )
+
+    binding.checkButton.setOnCheckedChangeListener( this )
+
+    binding.radioOn.setOnCheckedChangeListener( this )
+
+    binding.radioOff.setOnCheckedChangeListener( this )
+
   }
 
   private fun loadSpinner() {
@@ -117,6 +124,19 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener,
       R.id.switch_button -> {
 //        binding.switchButton.isChecked = true
         toast( "Switch: ${if (p1) "true" else "false"}")
+      }
+
+      R.id.check_button -> {
+        toast( "CheckBox: ${if (p1) "true" else "false"}")
+//        binding.checkButton.isChecked = true
+      }
+
+      R.id.radio_on -> {
+        toast( "Radio on: ${if (p1) "true" else "false"}")
+      }
+
+      R.id.radio_off -> {
+        toast( "Radio off: ${if (p1) "true" else "false"}")
       }
     }
   }
