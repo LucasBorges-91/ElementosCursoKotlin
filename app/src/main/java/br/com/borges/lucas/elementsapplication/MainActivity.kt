@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.borges.lucas.elementsapplication.databinding.ActivityMainBinding
@@ -35,7 +36,6 @@ class MainActivity : AppCompatActivity() {
       toast.show()
     }
 
-
     binding.buttonSnack.setOnClickListener{
       val snack = Snackbar.make(binding.linearRoot, "Snack", Snackbar.LENGTH_SHORT )
 
@@ -46,6 +46,15 @@ class MainActivity : AppCompatActivity() {
       snack.setBackgroundTint( Color.GRAY )
       snack.show()
     }
+
+    //configura spinner dinamico
+    loadSpinner()
+  }
+
+  private fun loadSpinner() {
+    val mList = listOf("gramas", "kg", "arroba", "tonelada")
+    val adapter = ArrayAdapter( this, android.R.layout.simple_spinner_dropdown_item, mList )
+    binding.spinnerDynamic.adapter = adapter
   }
 
   private fun toast( str: String ) {
