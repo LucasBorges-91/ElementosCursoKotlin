@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ElementsApplication</string>
+
+    <string-array name="spnnier_values" >
+        <item>Gramas</item>
+        <item>KG</item>
+        <item>Arrobas</item>
+        <item>Toneladas</item>
+    </string-array>
 </resources>

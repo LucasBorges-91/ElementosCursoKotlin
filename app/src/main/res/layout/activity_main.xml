@@ -22,4 +22,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Snack me" />
+
+    <Spinner
+        android:id="@+id/spinner_static"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/spnnier_values"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_dynamic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
 </LinearLayout>
