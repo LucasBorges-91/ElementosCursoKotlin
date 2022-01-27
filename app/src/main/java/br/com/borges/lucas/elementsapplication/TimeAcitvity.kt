@@ -5,6 +5,7 @@ import android.app.TimePickerDialog
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
@@ -49,6 +50,8 @@ class TimeAcitvity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     }
 
     binding.buttonGetTime.setOnClickListener{
+
+      binding.progressBar.visibility = View.GONE
       var hour = 0
       var minute = 0
       if ( Build.VERSION.SDK_INT >= 23 ) {

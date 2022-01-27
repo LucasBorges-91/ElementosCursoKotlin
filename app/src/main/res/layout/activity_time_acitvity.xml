@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- Botoes obter e atribuir seekbar -->
+    <!-- Botoes obter e atribuir timepicker -->
     <LinearLayout
         android:id="@+id/linear_button_timepicker"
         android:layout_width="match_parent"
@@ -52,5 +52,12 @@
             android:layout_weight="1"
             android:text="atribuir time" />
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
