@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewParent
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.borges.lucas.elementsapplication.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
   private lateinit var binding: ActivityMainBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,8 +49,22 @@ class MainActivity : AppCompatActivity() {
       snack.show()
     }
 
+    binding.spinnerStatic.onItemSelectedListener = this
+
     //configura spinner dinamico
     loadSpinner()
+
+    binding.buttonGetSpinner.setOnClickListener{
+      val selectItem = binding.spinnerStatic.selectedItem
+      val selectItemId = binding.spinnerStatic.selectedItemId
+      val selectItemPosition = binding.spinnerStatic.selectedItemPosition
+
+      toast( "position: $selectItemId: $selectItem")
+    }
+
+    binding.buttonSetSpinner.setOnClickListener{
+      binding.spinnerStatic.setSelection(2)
+    }
   }
 
   private fun loadSpinner() {
@@ -59,5 +75,17 @@ class MainActivity : AppCompatActivity() {
 
   private fun toast( str: String ) {
     Toast.makeText( this, str, Toast.LENGTH_LONG ).show()
+  }
+
+  override fun onItemSelected(parent: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+    when ( parent?.id ) {
+      R.id.spinner_static -> {
+        toast( parent?.getItemAtPosition( position ).toString() )
+      }
+    }
+  }
+
+  override fun onNothingSelected(p0: AdapterView<*>?) {
+    toast( "nothing" )
   }
 }
