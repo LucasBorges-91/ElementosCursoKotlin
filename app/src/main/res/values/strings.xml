@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ElementsApplication</string>
 
-    <string-array name="spnnier_values" >
+    <string-array name="spnnier_values">
         <item>Gramas</item>
         <item>KG</item>
         <item>Arrobas</item>
